@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Master Quiz - Comunidade & Conhecimento</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>
+                <svg class="tux-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C10.5 2 9.2 3.2 8.5 4.5C7.2 6.5 7.5 9.5 8.5 11.5C7.5 12.2 6 13.5 5.5 15C5 16.5 5.5 18 7 19C8 19.5 9.5 19.5 10.5 19C10.5 20 10.5 21.5 10 22C11 22.5 12.5 22.5 14 22C13.5 21.5 13.5 20 13.5 19C14.5 19.5 16 19.5 17 19C18.5 18 19 16.5 18.5 15C18 13.5 16.5 12.2 15.5 11.5C16.5 9.5 16.8 6.5 15.5 4.5C14.8 3.2 13.5 2 12 2Z" fill="currentColor"/>
+                </svg>
+                Linux Master Quiz
+            </h1>
+            <p>Baseado em: <em>Como o Linux Funciona</em></p>
+        </div>
+    </header>
+
+    <div class="ad-slot top-ad"></div>
+
+    <main id="app">
+        <section id="setup-quiz">
+            <h2>Configura o teu Desafio</h2>
+            <form id="quiz-config">
+                <div class="form-group">
+                    <label for="level">Nível de Dificuldade:</label>
+                    <select id="level">
+                        <option value="easy">Iniciante (Hardware e Comandos)</option>
+                        <option value="medium">Intermediário (Redes e DNS)</option>
+                        <option value="hard">Avançado (Kernel e MTAs)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantidade de Perguntas:</label>
+                    <input type="number" id="quantity" min="1" max="20" value="5">
+                </div>
+
+                <button type="submit" id="start-btn">Começar Quiz</button>
+            </form>
+        </section>
+
+        <section id="quiz-container" class="hidden"></section>
+
+        <section id="community-section" class="hidden">
+            <h3>Comunidade Linux</h3>
+            
+            <div id="auth-container">
+                <div id="auth-forms">
+                    <h4 id="auth-title">Login na Comunidade</h4>
+                    <div class="form-group">
+                        <input type="email" id="auth-email" placeholder="Teu Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="auth-password" placeholder="Tua Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="auth-username" placeholder="Nome de utilizador" class="hidden">
+                    </div>
+                    
+                    <div class="auth-buttons">
+                        <button id="btn-login">Entrar</button>
+                        <button id="btn-signup" class="secondary">Criar Conta</button>
+                    </div>
+                    <p id="auth-switch">Não tem conta? <span onclick="toggleAuthMode()" style="color: var(--accent-color); cursor: pointer;">Registe-se aqui</span></p>
+                </div>
+
+                <div id="user-logged" class="hidden">
+                    <p>Olá, <strong id="display-username"></strong>! Partilha a tua opinião:</p>
+                    <textarea id="comment-text" rows="4" placeholder="O que achaste deste nível do quiz?"></textarea>
+                    <button id="btn-post-comment">Publicar Comentário</button>
+                    <button id="btn-logout" style="background: transparent; color: #888; font-size: 0.8rem;">Sair da conta</button>
+                </div>
+            </div>
+
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #444;">
+            <div id="comments-list">
+                <p>A carregar comentários...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="ad-slot footer-ad">
+        <p>&copy; 2025 - Linux Quiz Project | Estuda e Partilha</p>
+    </footer>
+
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/quiz.js"></script>
+</body>
+</html>

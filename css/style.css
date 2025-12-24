@@ -1,0 +1,123 @@
+/* Variáveis Estilo "Terminal Dark" */
+:root {
+    --primary-color: #2d333b;
+    --accent-color: #3fb950;
+    --error-color: #da3633;
+    --text-color: #adbac7;
+    --bg-color: #22272e;
+    --ad-bg: #2d333b;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 1.5rem 5%;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.8rem;
+}
+
+/* Estilo do Símbolo do Linux */
+.tux-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.ad-slot {
+    background-color: var(--ad-bg);
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #444;
+    width: 100%;
+    max-width: 728px;
+    min-height: 90px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#setup-quiz, #quiz-container, #result-section {
+    background: var(--primary-color);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label { margin-bottom: 5px; font-weight: bold; }
+
+input, select, .option-btn {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #1c2128;
+    color: white;
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover { filter: brightness(1.1); }
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.option-btn { text-align: left; cursor: pointer; }
+.correct { background-color: var(--accent-color) !important; }
+.wrong { background-color: var(--error-color) !important; }
+.hidden { display: none; }
+
+@media (min-width: 768px) {
+    .header-content { flex-direction: row; justify-content: space-between; }
+    h1 { font-size: 2.2rem; }
+}
